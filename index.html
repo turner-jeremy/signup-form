@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Sign-up Form</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo-section">
+            <img id="logo" src="./images/sean-logo.png" alt="Sean Beans Fan Club Logo">
+            <h1>SEAN BEANS FANS</h1>
+        </div>
+    </div>
+    <div class="main-section">
+        <div class="call-to-action">
+            <p>This is not a real form, it's for a made-up website.</p>
+            <p>Sign up <em>now</em> to become a member and join our mailing list (But not really). </p>
+        </div>
+
+        <form class="signup-form" action="#" method="post">
+            <div class="form-container">
+            <!-- <div class="form-row"> -->
+                <div class="form-section">
+                    <label for="first-name">FIRST NAME*</label>
+                    <input type="text" id="first-name" placeholder="Sean" minlength="2" required>
+                </div>
+                <div class="form-section">
+                    <label for="last-name">LAST NAME*</label>
+                    <input type="text" id="last-name" placeholder="Beans" minlength="2" required>
+                </div>
+            <!-- </div> -->
+            <!-- <div class="form-row"> -->
+                <div class="form-section">
+                    <label for="email">EMAIL*</label>
+                    <input type="email" id="email" placeholder="sean@catfans.com" required>
+                </div>
+                <div class="form-section">
+                    <label for="phone">PHONE</label>
+                    <input type="text" id="phone" placeholder="0412345678" minlength="10" maxlength="10">
+                </div>
+            <!-- </div> -->
+            <!-- <div class="form-row"> -->
+                <div class="form-section">
+                    <label for="password">PASSWORD*</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-section">
+                    <label for="password-confirm">CONFIRM PASSWORD*</label>
+                    <input type="password" id="password-confirm" required>
+                </div>
+            </div>
+                <button type="submit">Create Account</button>
+            <!-- </div> -->
+        </form>
+    </div>
+
+
+</body>
+</html>

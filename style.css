@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+
+:root {
+    --color-main: #402c79;
+    --sidebar-overlay: #0500659d;
+    --border: lightgrey;
+    --label: rgb(94, 92, 92);
+}
+
+* {
+ box-sizing: border-box;
+}
+
+body, html {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    line-height: 1.2;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    background-image: linear-gradient(rgba(0, 0, 40, 0.295), rgba(98, 18, 98, 0.239)), url("./images/eugene-golovesov--vhPYGK3dSk-unsplash.jpg");
+    /* background-repeat: repeat;
+    background-size: 1em; */
+    width: 100%;
+    height: 12vh;
+}
+
+.logo-section {
+    height: 12vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: var(--sidebar-overlay);
+    padding: 0 1rem;
+}
+
+.logo-section h1 {
+    font-family: 'Boogaloo', sans-serif;
+    color: white;
+    justify-self: flex-end;
+    /* text-wrap: nowrap; */
+    font-size: calc(32px + 0.2vw);
+}
+
+#logo {
+    width: 140px;
+    max-width: max(5vw,25%);
+}
+
+.main-section {
+    background-color: #f8f9fa;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.call-to-action {
+    font-weight: 800;
+    font-size: 1em;
+    padding: 5px 25px;
+    text-align: center;
+}
+
+.signup-form {
+    padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* max-width: 600px; */
+}
+
+.form-container {
+    width: 100%;
+    padding: 1em 0 0 0;
+    background-color: #FFFFFF;
+    box-shadow: 0 0.5vh 10px grey;
+}
+.form-row {
+    /* margin-bottom: 20px; */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+}
+
+.form-section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 1em 1em 1em;
+
+    align-items: center;
+}
+
+label {
+    font-size: 0.8em;
+    margin-bottom: 0.1em;
+    color: var(--label);
+}
+.form-section input[type='text'],
+.form-section input[type='email'],
+.form-section input[type='password'] {
+    height: 2em;
+    padding-left: 0.5em;
+    width: 250px;
+    font-size: 1.2em;
+    border: 0.15em solid var(--border);
+    border-radius: 0.5em;
+}
+button {
+    width: 160px;
+    margin: 1em auto;
+    padding: 12px;
+    font-size: 1.1em;
+    border: 0 none black;
+    border-radius: 0.3em;
+    background-color: #404dc2;
+    color: white;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #6659b9;
+    transition: 0.3s;
+}
+
+.form-section input:valid {
+    border-color: darkgreen;
+}
+
+.form-section input:invalid {
+    border-color: darkred;
+}
+
+@media only screen and (min-width: 700px) {
+    body {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        position: fixed;
+        flex: 1;
+        width: 33%;
+
+        height: 100%;
+    }
+
+    .logo-section {
+        margin-top: 40vh;
+        height: 20vh;
+    }
+
+    .logo-section h1 {
+        font-size: 3vw;
+    }
+    .main-section {
+        margin-left: 33%;
+        justify-content: center;
+        /* align-items: flex-start; */
+        flex: 2;
+        width: 100%;
+    }
+
+    .call-to-action {
+        text-align: left;
+    }
+
+    .call-to-action, 
+    .form-section {
+        padding-left: 2vw;
+        margin: 0;
+        align-items: flex-start;
+    }
+    .signup-form {
+        /* align-items: flex-start; */
+        max-width: 100%;
+        justify-content: flex-start;
+    }
+
+    .form-section {
+        margin: 0 1em 1em 0;
+    }
+
+    button {
+        margin: 1em 0 0 2vw;
+        align-self: flex-start;
+    }
+}
