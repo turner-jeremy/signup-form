@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Boogaloo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@800&display=swap');
 
 :root {
     --color-main: #402c79;
-    --sidebar-overlay: #0500659d;
+    --sidebar-overlay: #69515183;
     --border: lightgrey;
-    --label: rgb(94, 92, 92);
+    --label: rgb(69, 69, 69);
 }
 
 * {
@@ -25,9 +25,9 @@ body {
 }
 
 .sidebar {
-    background-image: linear-gradient(rgba(0, 0, 40, 0.295), rgba(98, 18, 98, 0.239)), url("./images/eugene-golovesov--vhPYGK3dSk-unsplash.jpg");
-    /* background-repeat: repeat;
-    background-size: 1em; */
+    background-image: url("./images/cherry-blossom1.jpg");
+    background-size:cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 12vh;
 }
@@ -44,16 +44,16 @@ body {
 }
 
 .logo-section h1 {
-    font-family: 'Boogaloo', sans-serif;
+    font-family: 'Noto Serif Display', serif;
     color: white;
     justify-self: flex-end;
     /* text-wrap: nowrap; */
-    font-size: calc(32px + 0.2vw);
+    font-size: calc(56px + 0.2vw);
 }
 
 #logo {
-    width: 140px;
-    max-width: max(5vw,25%);
+    height: calc(56px + 0.2vw);
+    /* max-width: max(5vw,25%); */
 }
 
 .main-section {
@@ -64,6 +64,17 @@ body {
     justify-content: flex-start;
 }
 
+.main-section h2,
+.main-section h4 {
+    width: 100%;
+    text-align: left;
+    padding: 1em;
+    margin: auto;
+    line-height: 1.4em;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
 .call-to-action {
     font-weight: 800;
     font-size: 1em;
@@ -72,7 +83,7 @@ body {
 }
 
 .signup-form {
-    padding: 15px 0;
+    padding: 15px 0 0 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -90,7 +101,7 @@ body {
 .form-row {
     /* margin-bottom: 20px; */
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     margin: 0;
 }
 
@@ -98,14 +109,28 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 1em 1em 1em;
-
     align-items: center;
 }
 
-label {
-    font-size: 0.8em;
-    margin-bottom: 0.1em;
+.input-label {
+    display: flex;
     color: var(--label);
+    margin-bottom: 0.1em;
+    width: 240px;
+    justify-content: space-between;
+}
+
+label {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+}
+
+.required {
+    font-size: 0.8em;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
 }
 .form-section input[type='text'],
 .form-section input[type='email'],
@@ -128,18 +153,76 @@ button {
     color: white;
 }
 
-button:hover {
-    cursor: pointer;
-    background-color: #6659b9;
-    transition: 0.3s;
+.form-section input[type='text']:valid,
+.form-section input[type='email']:valid {
+    border-color: green;
 }
 
-.form-section input:valid {
-    border-color: darkgreen;
+.form-section input[type='text']:invalid,
+.form-section input[type='email']:invalid,
+.form-section input[type='password']:invalid {
+    border-color: red;
 }
 
-.form-section input:invalid {
-    border-color: darkred;
+#message,
+#message2 {
+    display:none;
+    color: #000;
+    position: relative;
+    width: 280px;
+    margin: auto;
+}
+
+#message h3,
+#message2 h3 {
+    margin: 0;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+#message p {
+    margin: auto;
+    padding: 0 32px;
+    width: 250px;
+  }
+
+#message2 h3 {
+    color: red;
+}
+
+  /* Add a green text color and a checkmark when the requirements are right */
+.valid-p {
+    color: green;
+  }
+  
+  .valid-p:before {
+    position: relative;
+    left: -8px;
+    content: '\2713';
+  }
+  
+  /* Add a red text color and an "x" icon when the requirements are wrong */
+  .invalid-p {
+    color: red;
+  }
+  
+  .invalid-p:before {
+    position: relative;
+    left: -8px;
+    content: '\2715';
+  }
+
+.login-section p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: var(--label);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 800;
 }
 
 @media only screen and (min-width: 700px) {
@@ -150,23 +233,22 @@ button:hover {
     .sidebar {
         position: fixed;
         flex: 1;
-        width: 33%;
-
+        width: 33vw;
         height: 100%;
     }
 
     .logo-section {
-        margin-top: 40vh;
-        height: 20vh;
+        margin-top: 44vh;
+        height: 16vh;
     }
 
     .logo-section h1 {
-        font-size: 3vw;
+        font-size: calc(56px + 0.2vw);
     }
+
     .main-section {
-        margin-left: 33%;
+        margin-left: 33vw;
         justify-content: center;
-        /* align-items: flex-start; */
         flex: 2;
         width: 100%;
     }
@@ -181,12 +263,16 @@ button:hover {
         margin: 0;
         align-items: flex-start;
     }
+
     .signup-form {
-        /* align-items: flex-start; */
         max-width: 100%;
         justify-content: flex-start;
     }
 
+    .form-row {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
     .form-section {
         margin: 0 1em 1em 0;
     }
@@ -194,5 +280,32 @@ button:hover {
     button {
         margin: 1em 0 0 2vw;
         align-self: flex-start;
+    }
+    
+    .password-section {
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    #message,
+    #message2 {
+        text-align: left;
+        margin: auto 0;
+        padding: 0 0 0 1vw;
+    }
+
+    #message h3,
+    #message2 h3,
+    #message p {
+        text-align: left;
+        margin: 0;
+    }
+
+    #message p {
+        padding-left: 8px;
+    }
+
+    .login-section p {
+        text-align: left;
+        padding: 8px 0 0 2vw;
     }
 }
